@@ -1,0 +1,68 @@
+.row{
+    margin: 0 20px 0 20px;
+    color: #ffff;
+}
+.posters{
+    display: flex;
+    padding: 20px 0 20px 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.posters::-webkit-scrollbar{
+    display: none;
+}
+.poster{
+    cursor: pointer;
+    max-height: 320px;
+    margin-right: 14px;
+}
+.poster:last-of-type{
+    margin: none;
+}
+.poster:hover{
+    transform: scale(1.1);
+}
+.smallPoster{
+    cursor: pointer;
+    max-height: 230px;
+    margin-right: 14px;
+}
+.smallPoster:hover{
+    transform: scale(1.1);
+}
+.ratings{
+    display: flex;
+    /* flex-wrap: nowrap; */
+    justify-content: space-between;
+}
+.wishlist-count{
+    cursor: pointer;
+    position: relative;
+    top: 15px;
+    left: 3px;
+    font-size: 13px;
+}
+.wishlist-icon{
+    cursor: pointer;
+    color: red;
+    font-size: 16px;
+}
+.vote-avg{
+    position: relative;
+    top: 15px;
+    right: 22px;
+}
+.vote-avg .wishlist-icon{
+    cursor: pointer;
+    color: gold;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 600px) {
+    .poster{
+        max-height: 280px;
+    }
+    .smallPoster{ 
+        max-height: 190px;
+    }
+}
