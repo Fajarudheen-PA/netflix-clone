@@ -23,13 +23,15 @@ function Banner() {
   
   return (
     <div style={{backgroundImage:`url(${movie ? imageUrl+movie.backdrop_path : ""})`}} className='banner'>
-        <div className='content'>
-            <h1 className='title'>{movie ? movie.title ? movie.title : movie.name : ''}</h1>
-            <div className='banner-buttons'>
-                <button onClick={()=>playVideo(movie.id)} className='button'>Play</button>
-                <button className='button'>My List</button>
-            </div>
-            <h1 className='description'>{movie ? movie.overview : ""}</h1>
+        <div className='content-wrapper'>
+          <div className='content'>
+              <h1 className='title'>{movie ? movie.title ? movie.title : movie.name : ''}</h1>
+              <div className='banner-buttons'>
+                  <button onClick={()=>playVideo(movie.id)} className='button'>Play</button>
+                  <button className='button'>My List</button>
+              </div>
+              <h1 className='description'>{movie ? movie.overview : ""}</h1>
+          </div>
         </div>
         <div className="fade-bottom"></div>
         {vidId && <Youtube videoId={vidId.key} close={()=>setVidId(!vidId)}/>}
