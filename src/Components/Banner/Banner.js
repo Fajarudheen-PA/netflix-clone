@@ -33,7 +33,7 @@ function Banner() {
               <h1 className='description'>{movie ? movie.overview : ""}</h1>
           </div>
         </div>
-        {/* <div className="fade-bottom"></div> */}
+        <div className="fade-bottom"></div>
         {vidId && <Youtube videoId={vidId.key} close={()=>setVidId(!vidId)}/>}
     </div>
   )
