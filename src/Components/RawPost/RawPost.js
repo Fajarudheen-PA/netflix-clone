@@ -42,27 +42,29 @@ function RawPost(props) {
   }
 
   return (
-    <div className='row'>
-      <h2>{props.title}</h2>
-      <div className='posters'>
-        {movies.map((obj) =>
-          <div>
-            <img onClick={() => handleVideos(obj.id)} className={props.isSmall ? 'smallPoster' : 'poster'} src={`${movies ? imageUrl + obj.poster_path : ""}`} alt="Poster" />
-            <div className='ratings'>
-              <h5 className='wishlist-count'><FontAwesomeIcon icon={faHeart} beat className='wishlist-icon' /> {obj.vote_count}</h5>
-              <h5 className='vote-avg'><FontAwesomeIcon icon={faStar} bounce className='wishlist-icon' /> {obj.vote_average}</h5>
+    <div className='content-wrapper'>
+        <div className='row'>
+        <h2>{props.title}</h2>
+        <div className='posters'>
+          {movies.map((obj) =>
+            <div>
+              <img onClick={() => handleVideos(obj.id)} className={props.isSmall ? 'smallPoster' : 'poster'} src={`${movies ? imageUrl + obj.poster_path : ""}`} alt="Poster" />
+              <div className='ratings'>
+                <h5 className='wishlist-count'><FontAwesomeIcon icon={faHeart} beat className='wishlist-icon' /> {obj.vote_count}</h5>
+                <h5 className='vote-avg'><FontAwesomeIcon icon={faStar} bounce className='wishlist-icon' /> {obj.vote_average}</h5>
+              </div>
             </div>
-          </div>
-        )}
-        {/* {movies.map((obj)=>
-            <img onClick={()=>handleVideos(obj.id)} className={props.isSmall ? 'smallPoster' : 'poster'} src={`${movies ? imageUrl+obj.poster_path : ""}`} alt="Poster"/>
-          )} */}
-        {/* {movies.map((obj)=>
-            <img onClick={()=>handleVideos(obj.id)} className={props.isSmall ? 'smallPoster' : 'poster'} src={`${movies ? imageUrl+obj.poster_path : ""}`} alt="Poster" />
-          )} */}
+          )}
+          {/* {movies.map((obj)=>
+              <img onClick={()=>handleVideos(obj.id)} className={props.isSmall ? 'smallPoster' : 'poster'} src={`${movies ? imageUrl+obj.poster_path : ""}`} alt="Poster"/>
+            )} */}
+          {/* {movies.map((obj)=>
+              <img onClick={()=>handleVideos(obj.id)} className={props.isSmall ? 'smallPoster' : 'poster'} src={`${movies ? imageUrl+obj.poster_path : ""}`} alt="Poster" />
+            )} */}
+        </div>
+        {/* {  urlId && <YouTube opts={opts} videoId={urlId.key}/>  } */}
+        {urlId && <Youtube videoId={urlId.key} close={() => setUrlId(!urlId)} />}
       </div>
-      {/* {  urlId && <YouTube opts={opts} videoId={urlId.key}/>  } */}
-      {urlId && <Youtube videoId={urlId.key} close={() => setUrlId(!urlId)} />}
     </div>
   )
 }

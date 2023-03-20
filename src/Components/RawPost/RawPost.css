@@ -1,5 +1,5 @@
 .row{
-    margin: 0 20px 0 20px;
+    /* margin: 0 20px 0 20px; */
     color: #ffff;
 }
 .posters{
@@ -59,8 +59,11 @@
 }
 
 @media screen and (max-width: 600px) {
+    .posters{
+        margin: 0 -24px;
+    }
     .poster{
-        max-height: 280px;
+        max-height: 260px;
     }
     .smallPoster{ 
         max-height: 190px;

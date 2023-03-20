@@ -19,7 +19,8 @@ function Youtube(props) {
             src={`https://www.youtube.com/embed/${props.videoId}`}
             frameborder="0"
             allow="autoplay"
-            allowfullscreen>
+            allowfullscreen
+            playsinline>
           </iframe>
           <div className="close">
             <FontAwesomeIcon icon={faTimes} onClick={props.close}/>
