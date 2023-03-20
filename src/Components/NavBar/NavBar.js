@@ -20,7 +20,12 @@ function NavBar() {
           <img onClick={()=>setProf(!prof)} className='avatar' src="https://i.pinimg.com/originals/0d/dc/ca/0ddccae723d85a703b798a5e682c23c1.png" alt="Avatar" />
         </div>
       </div>  
-        { prof && <ProfDrawer onClose={closeProfDrawer}/> }
+        { prof && (
+        <div>
+          <div className="overlay" onClick={closeProfDrawer}></div>
+          <ProfDrawer onClose={closeProfDrawer}/>
+        </div>
+          ) }
     </div>
   )
 }
