@@ -109,12 +109,64 @@
     font-size: 12px;
     transform: translateX(22px);
 }
+.close{
+    display: none;
+}
 
-@media screen and (max-width:600px) {
-    .profile-drawer{
-        width: 210px;
-        min-height: 190px;
-        top: 15px;
-        left: 23%;
+@media screen and (max-width:900px) {
+
+    @keyframes slideIn {
+        0% {
+          left: -100px;
+        }
+        100% {
+          left: 0;
+        }
+    }
+
+    .profile-drawer {
+        position: fixed;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 70%;
+        height: 100%;
+        top: 0px;
+        left: 0%;
+        /* z-index: 999; */
+        /* background: #fff; */
+        /* padding: 20px 0 10px 0; */
+        border-radius: unset;
+        animation: slideIn 1s ease forwards;
+    }
+
+    .profile-drawer .close{
+        display: block;
+        position: fixed;
+        top: 10px;
+        left: 63%;
+        font-size: 21px;
+        /* animation: slideOut 1s ease forwards; */
+    }
+
+    .profile-drawer::after {
+        display: none;
+    }
+
+    .profile-drawer li {
+        min-height: 55px;
+        padding: 10px 35px;
+        font-size: 18px;
+        font-weight: 400;
+    }
+    
+    .profile-drawer button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .version{
+        transform: unset;
     }
 }
