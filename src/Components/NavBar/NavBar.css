@@ -109,3 +109,12 @@
     font-size: 12px;
     transform: translateX(22px);
 }
+
+@media screen and (max-width:600px) {
+    .profile-drawer{
+        width: 210px;
+        min-height: 190px;
+        top: 15px;
+        left: 23%;
+    }
+}
